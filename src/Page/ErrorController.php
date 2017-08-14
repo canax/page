@@ -4,7 +4,6 @@ namespace Anax\Page;
 
 use \Anax\DI\InjectionAwareInterface;
 use \Anax\DI\InjectionAwareTrait;
-use \Anax\Route\NotFoundException;
 
 /**
  * A sample class for routes dealing with error situations.
@@ -40,44 +39,44 @@ class ErrorController implements InjectionAwareInterface
      *
      * @return void
      */
-     public function page403()
-     {
-         $this->errorPage(
+    public function page403()
+    {
+        $this->errorPage(
             403,
             "403 Forbidden",
             "You are not permitted to do this."
-         );
-     }
+        );
+    }
 
 
 
-     /**
-      * Render a 404 Page not found using the default page renderer.
-      *
-      * @return void
-      */
-      public function page404()
-      {
-          $this->errorPage(
-             404,
-             "404 Page not found",
-             "The page you are looking for is not here."
-          );
-      }
+    /**
+     * Render a 404 Page not found using the default page renderer.
+     *
+     * @return void
+     */
+    public function page404()
+    {
+        $this->errorPage(
+            404,
+            "404 Page not found",
+            "The page you are looking for is not here."
+        );
+    }
 
 
 
-      /**
-       * Render a 404 Page not found using the default page renderer.
-       *
-       * @return void
-       */
-       public function page500()
-       {
-           $this->errorPage(
-              500,
-              "500 Internal Server Error",
-              "An unexpected condition was encountered."
-           );
-       }
+    /**
+     * Render a 404 Page not found using the default page renderer.
+     *
+     * @return void
+     */
+    public function page500()
+    {
+        $this->errorPage(
+            500,
+            "500 Internal Server Error",
+            "An unexpected condition was encountered."
+        );
+    }
 }
