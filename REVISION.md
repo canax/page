@@ -2,6 +2,15 @@ Revision history
 =================================
 
 
+
+v1.1.1 (2018-04-23)
+---------------------------------
+
+* Update configuration for travis to support >= php 7.0.
+* Update configuration for scrutinizer to install phpunit.
+
+
+
 v1.1.0 (2018-04-23)
 ---------------------------------
 
