@@ -3,6 +3,16 @@ Revision history
 
 
 
+v2.0.0-alpha.1 (2018-08-01)
+---------------------------------
+
+* Prepare to clean up waist and aline with release of Anax Lite v1.0.
+* Update Makefile.
+* Update to require PHP 7.2 in composer.json.
+* Fix phpunit.
+
+
+
 v1.1.1 (2018-04-23)
 ---------------------------------
 

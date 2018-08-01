@@ -27,11 +27,11 @@ Short examples on how to use the module page.
 License
 ------------------
 
-This software carries a MIT license.
+This software carries a MIT license. See [LICENSE.txt](LICENSE.txt) for details.
 
 
 
 ```
  .  
-..:  Copyright (c) 2017-2018 Mikael Roos (mos@dbwebb.se)
+..:  Copyright (c) 2013 - 2018 Mikael Roos, mos@dbwebb.se
 ```

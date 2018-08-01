@@ -22,10 +22,10 @@
         }
     },
     "require": {
-        "php": ">=7.0",
-        "anax/di": "^1.0",
-        "anax/request": "^1.0",
-        "anax/view": "^1.0",
-        "anax/response": "^1.0"
+        "php": ">=7.2",
+        "anax/di": "^2.0.0@alpha",
+        "anax/request": "^2.0.0@alpha",
+        "anax/view": "^2.0.0@alpha",
+        "anax/response": "^2.0.0@alpha"
     }
 }
