@@ -2,15 +2,15 @@
 
 namespace Anax\Page;
 
-use \Anax\DI\InjectionAwareInterface;
-use \Anax\DI\InjectionAwareTrait;
+use Anax\Commons\ContainerInjectableInterface;
+use Anax\Commons\ContainerInjectableTrait;
 
 /**
  * A default page rendering class.
  */
-class FlatFileContentController implements InjectionAwareInterface
+class FlatFileContentController implements ContainerInjectableInterface
 {
-    use InjectionAwareTrait;
+    use ContainerInjectableTrait;
 
 
 

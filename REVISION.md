@@ -3,6 +3,15 @@ Revision history
 
 
 
+v2.0.0-alpha.2 (2018-08-09)
+---------------------------------
+
+* New structure for Page.
+* Cleaned up.
+* Added unit test.
+
+
+
 v2.0.0-alpha.1 (2018-08-01)
 ---------------------------------
 

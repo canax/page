@@ -2,57 +2,80 @@
 
 namespace Anax\Page;
 
-use \Anax\DI\InjectionAwareInterface;
-use \Anax\DI\InjectionAwareTrait;
+use Anax\Commons\ContainerInjectableInterface;
+use Anax\Commons\ContainerInjectableTrait;
 
 /**
- * A default page rendering class.
+ * To ease rendering a page consisting of several views.
  */
-class Page implements /* PageRenderInterface, */ InjectionAwareInterface
+class Page implements ContainerInjectableInterface
 {
-    use InjectionAwareTrait;
+    use ContainerInjectableTrait;
 
 
 
     /**
-     * @var string $namespace A namespace to prepend each template file.
+     * @var array $layout to hold tha layout view to be rendered last.
      */
-    private $namespace = "anax/v1";
+    private $layout;
 
 
 
     /**
-     * Render a standard web page using a specific layout.
+     * Set the view to be used for the layout.
      *
-     * @param array   $data   variables to expose to layout view.
+     * @param array $view configuration to create up the view.
+     *
+     * @return $this
+     */
+    public function addLayout(array $view) : object
+    {
+        $this->layout = $view;
+        return $this;
+    }
+
+
+
+    /**
+     * Utility method to add a view to the view collection for later
+     * rendering.
+     *
+     * @param array|string  $template the name of the template file to include
+     *                                or array with view details.
+     * @param array         $data     variables to make available to the view,
+     *                                default is empty.
+     * @param string        $region   which region to attach the view, default
+     *                                is "main".
+     * @param integer       $sort     which order to display the views.
+     *
+     * @return $this
+     */
+    public function add(
+        $template,
+        array $data = [],
+        string $region = "main",
+        int $sort = 0
+    ) : object {
+        $this->di->get("view")->add($template, $data, $region, $sort);
+        return $this;
+    }
+
+
+
+    /**
+     * Add the layout view to the region "layout and render all views
+     * within the region "layout", and create a response from it.
+     *
+     * @param array   $data   additional variables to expose to layout view.
      * @param integer $status code to use when delivering the result.
      *
-     * @return void
-     *
-     * @SuppressWarnings(PHPMD.ExitExpression)
+     * @return object
      */
-    public function render($data, $status = 200)
+    public function render(array $data = [], int $status = 200)
     {
-        // Get the view container, holding all views
         $view = $this->di->get("view");
-
-        // Add static assets
-        // $data["favicon"] = "favicon.ico";
-        // $data["stylesheets"] = ["css/style.css"];
-        // $data["javascripts"] = ["js/main.js"];
-
-        // Add views for common header, navbar and footer
-        $view->add("{$this->namespace}/header/default", $data, "header");
-        $view->add("{$this->namespace}/navbar/default", $data, "navbar");
-        $view->add("{$this->namespace}/footer/default", $data, "footer");
-
-        // Add view for the overall layout, use region "layout"
-        $view->add("{$this->namespace}/layout/default", $data, "layout");
-
-        // Render all views, using the region "layout",
-        // add to response and send.
+        $view->add($this->layout, $data, "layout");
         $body = $view->renderBuffered("layout");
-        $this->di->get("response")->setBody($body)->send($status);
-        exit;
+        return $this->di->get("response")->setBody($body);
     }
 }

@@ -2,15 +2,15 @@
 
 namespace Anax\Page;
 
-use \Anax\DI\InjectionAwareInterface;
-use \Anax\DI\InjectionAwareTrait;
+use Anax\Commons\ContainerInjectableInterface;
+use Anax\Commons\ContainerInjectableTrait;
 
 /**
  * A sample class for routes dealing with error situations.
  */
-class ErrorController implements InjectionAwareInterface
+class ErrorController implements ContainerInjectableInterface
 {
-    use InjectionAwareTrait;
+    use ContainerInjectableTrait;
 
 
 
