@@ -76,6 +76,10 @@ class Page implements ContainerInjectableInterface
         $view = $this->di->get("view");
         $view->add($this->layout, $data, "layout");
         $body = $view->renderBuffered("layout");
-        return $this->di->get("response")->setBody($body);
+
+        $response = $this->di->get("response");
+        $response->setBody($body);
+        $response->setStatusCode($status);
+        return $response;
     }
 }
