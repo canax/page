@@ -13,6 +13,7 @@ return [
         "region" => "layout",
         "sort" => null,
         "data" => [
+            "baseTitle" => " | Anax",
             "favicon" => "favicon.ico",
             "stylesheets" => [
                 "css/style.css",
