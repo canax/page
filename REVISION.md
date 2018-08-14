@@ -3,6 +3,13 @@ Revision history
 
 
 
+v2.0.0-alpha.* (2018-08-14)
+---------------------------------
+
+* Add navbar items through config/page.php.
+
+
+
 v2.0.0-alpha.3 (2018-08-13)
 ---------------------------------
 
