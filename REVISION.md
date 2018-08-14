@@ -7,6 +7,7 @@ v2.0.0-alpha.* (2018-08-14)
 ---------------------------------
 
 * Add navbar items through config/page.php.
+* Add configuration for navbar in separate file config/navbar.php.
 
 
 
