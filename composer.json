@@ -1,16 +1,14 @@
 {
     "name": "anax/page",
     "type": "library",
-    "description": "Anax page module.",
+    "description": "Anax Page module, wrapper to ease create web pages.",
     "keywords": ["boilerplate", "framework", "mvc", "micro", "education"],
     "homepage": "https://dbwebb.se/anax",
     "license": "MIT",
     "authors": [
         {
             "name": "Mikael Roos",
-            "email": "mos@dbwebb.se",
-            "homepage": "https://dbwebb.se",
-            "role": "Developer"
+            "email": "mos@dbwebb.se"
         }
     ],
     "support": {
@@ -30,6 +28,7 @@
         "anax/di": "^2.0.0@alpha",
         "anax/response": "^2.0.0@alpha",
         "anax/request": "^2.0.0@alpha",
-        "anax/view": "^2.0.0@alpha"
+        "anax/view": "^2.0.0@alpha",
+        "phpunit/phpunit": "^7"
     }
 }
